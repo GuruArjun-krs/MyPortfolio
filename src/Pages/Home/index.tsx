@@ -1,12 +1,13 @@
 import React from 'react'
 
-import { AboutSection, HeroSection } from './Sections'
+import { AboutSection, HeroSection, PassionSection } from './Sections'
 
 const HomePage = () => {
     return (
         <main className='flex flex-col gap-[20px]'>
             <HeroSection />
-            <AboutSection/>
+            <AboutSection />
+            <PassionSection />
         </main>
     )
 }

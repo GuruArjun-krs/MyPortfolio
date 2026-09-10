@@ -56,3 +56,37 @@
   --color-text-primary: #040303;
   --color-text-secondary: #777777;
 }
+
+.animated-underline {
+  position: relative;
+  text-decoration: none;
+  align-self: flex-start;
+  display: flex;
+  gap:4px
+}
+
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: currentColor;
+  transform-origin: bottom left;
+  transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .animated-underline:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes slideIn {
+  to {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}

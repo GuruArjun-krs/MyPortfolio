@@ -1,17 +1,33 @@
 import React from 'react'
 import SecondaryHeader from '../../../../Core/Layout/SecondaryHeader'
 import ArjunImage from '../../../../Assets/Images/ArjunAnimeSec.png'
+import { ExternalLinks } from '../../../../Core/Interface'
 
 const HeroSection = () => {
     return (
         <section id='main' className='h-[calc(100vh-40px)] bg-primary-bg rounded-xl relative'>
             <SecondaryHeader />
             <div className="absolute left-1/2 -translate-x-1/2 top-[100px] z-10 w-max">
-                <p className=' text-text-primary font-primary font-bold text-3xl'>HI THERE, I'M GURU ARJUN</p>
+                <p className=' text-text-primary font-primary font-bold text-5xl'>HI THERE, I'M GURU ARJUN</p>
+            </div>
+
+            <div className='flex max-w-0 flex-col self-start relative top-[20px] left-[20px] gap-2'>
+                {ExternalLinks?.map((el) => (
+                    <a
+                        key={el?.id}
+                        href={el?.url}
+                        className="font-primary text-text-secondary animated-underline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {el?.icon}
+                        {el?.title}
+                    </a>
+                ))}
             </div>
 
             <div className="hidden md:block absolute right-[5%] top-1/4 -translate-y-1/2 w-48 z-30">
-                <p className="text-text-primary text-xs font-mono font-semibold uppercase tracking-widest leading-relaxed text-right">
+                <p className="text-text-primary text-xs font-primary font-semibold uppercase tracking-widest leading-relaxed text-right">
                     I am a creative front-end developer with a strong focus on motion and interaction.
                 </p>
             </div>
