@@ -24,7 +24,7 @@ const TimeLineData = [
 
 const PassionSection = () => {
     return (
-        <section id='main' className='h-[calc(100vh-40px)] bg-primary-bg rounded-xl relative'>
+        <section id='passion' className='h-[calc(100vh-40px)] bg-primary-bg rounded-xl relative overflow-hidden'>
             <div className='absolute right-5 bottom-5'>
                 <TimeLine timelineItems={TimeLineData} />
             </div>
@@ -56,7 +56,7 @@ const PassionSection = () => {
                 <WorkFlow className='w-100 h-auto' />
             </div>
 
-            <img src={AwardImg} className='absolute bottom-0' alt="" />
+            <img src={AwardImg} className='absolute bottom-0 overflow-hidden' alt="award-img" />
         </section>
     )
 }
