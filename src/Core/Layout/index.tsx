@@ -1,14 +1,19 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 
 import PrimaryHeader from './PrimaryHeader'
 import { ChevronsUpIcon } from '@animateicons/react/lucide'
 
 const Layout = () => {
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const location = useLocation();
     const [infoState, setInfoState] = useState({
         showToTopBtn: false
     })
+
+    useEffect(() => {
+        scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'instant' });
+    }, [location.pathname]);
 
     useEffect(() => {
         const container = scrollContainerRef.current;
