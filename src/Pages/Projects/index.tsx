@@ -543,31 +543,6 @@ const ProjectsPage: React.FC = () => {
                     )
                 })}
             </div>
-
-            <div className='mt-8 p-8 sm:p-10 rounded-2xl bg-[#EAE7DC] border border-[#0A6451]/15 flex flex-col md:flex-row items-center justify-between gap-6'>
-                <div className='text-center md:text-left'>
-                    <h3 className='font-primary font-bold text-2xl sm:text-3xl text-[#0A6451] uppercase'>
-                        Interested in discussing mobile or web architecture?
-                    </h3>
-                    <p className='font-primary text-sm sm:text-base text-[#777777] mt-1'>
-                        Specialized in React Native (iOS &amp; Android), React.js, native bridges, and production deployment.
-                    </p>
-                </div>
-                <div className='flex items-center gap-3'>
-                    <button
-                        onClick={() => navigate('/#contact')}
-                        className='px-6 py-3 rounded-full bg-[#0A6451] text-white font-primary font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-[#07473a] transition-colors shadow-md cursor-pointer'
-                    >
-                        Get In Touch
-                    </button>
-                    <button
-                        onClick={() => navigate('/')}
-                        className='px-5 py-3 rounded-full border border-[#0A6451] text-[#0A6451] font-primary font-semibold text-xs sm:text-sm uppercase tracking-wider hover:bg-white transition-colors cursor-pointer'
-                    >
-                        Back to Home
-                    </button>
-                </div>
-            </div>
         </div>
     )
 }

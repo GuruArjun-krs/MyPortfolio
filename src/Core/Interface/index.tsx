@@ -3,6 +3,7 @@ import { GithubIcon, LinkedinIcon } from "@animateicons/react/lucide";
 
 const HomePage = lazy(() => import('../../Pages/Home'))
 const ProjectsPage = lazy(() => import('../../Pages/Projects'))
+const ContactPage = lazy(() => import('../../Pages/Contact'))
 
 export const Pages = [
     {
@@ -14,6 +15,11 @@ export const Pages = [
         name: 'Projects',
         path: '/projects',
         component: ProjectsPage,
+    },
+    {
+        name: 'Contact',
+        path: '/contact',
+        component: ContactPage,
     }
 ]
 

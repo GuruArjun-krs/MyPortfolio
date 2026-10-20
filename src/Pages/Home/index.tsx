@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AboutSection, HeroSection, PassionSection, ProjectSection } from './Sections'
+import { AboutSection, ContactSection, HeroSection, PassionSection, ProjectSection } from './Sections'
 
 const HomePage = () => {
     return (
@@ -9,6 +9,7 @@ const HomePage = () => {
             <AboutSection />
             <PassionSection />
             <ProjectSection />
+            <ContactSection />
         </main>
     )
 }

@@ -12,8 +12,18 @@ const Layout = () => {
     })
 
     useEffect(() => {
+        if (location.hash) {
+            const targetId = location.hash.replace('#', '');
+            const element = document.getElementById(targetId);
+            if (element) {
+                setTimeout(() => {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+                return;
+            }
+        }
         scrollContainerRef.current?.scrollTo({ top: 0, behavior: 'instant' });
-    }, [location.pathname]);
+    }, [location.pathname, location.hash]);
 
     useEffect(() => {
         const container = scrollContainerRef.current;

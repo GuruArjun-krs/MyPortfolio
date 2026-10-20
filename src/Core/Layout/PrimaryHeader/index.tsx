@@ -9,6 +9,14 @@ const PrimaryHeader = () => {
     if (location.pathname !== '/') {
       e.preventDefault();
       navigate(`/${hash}`);
+    } else {
+      e.preventDefault();
+      const targetId = hash.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        window.history.pushState(null, '', hash);
+      }
     }
   };
 
@@ -29,10 +37,13 @@ const PrimaryHeader = () => {
         )}
         {HeaderTab.map((el) => {
           const isProjectsActive = location.pathname === '/projects' && el.id === '#project';
+          const isContactActive = (location.pathname === '/contact' || location.hash === '#contact') && el.id === '#contact';
+          const isActive = isProjectsActive || isContactActive;
+
           return (
             <a
               className={`font-primary text-sm transition-colors ${
-                isProjectsActive
+                isActive
                   ? 'text-primary-color font-bold'
                   : 'text-text-secondary hover:text-primary-color'
               }`}
